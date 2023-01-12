@@ -162,7 +162,8 @@ export default component$(() => {
       <section class="bg-gray">
         <h2>5. Hook useStyles$</h2>
         <p>
-          Es un método que funciona tanto en el servidor como en el cliente.
+          Es un método de carga de estilos con lazy load tan solo si es
+          necesario.
         </p>
       </section>
       <section>
