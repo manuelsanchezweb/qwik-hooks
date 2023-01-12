@@ -20,9 +20,10 @@ interface SimpleObject {
 export default component$(() => {
   useStyles$(CoolStylesCSS);
 
-  const stringStore = useSignal("String guardado");
+  const stringStore = useSignal("String");
   const numberStore = useSignal(1);
-  const dinner = useStore({ state: false });
+  const dinnerState = useSignal(false);
+
   const simpleObject = useStore<SimpleObject>(
     {
       fruits: {
@@ -96,10 +97,10 @@ export default component$(() => {
           <p>
             Nombre de la variable: <strong>{stringStore.value}</strong>.
           </p>
-          <button onClick$={() => (dinner.state = !dinner.state)}>
+          <button onClick$={() => (dinnerState.value = !dinnerState.value)}>
             Cambiar estado de la cena
           </button>
-          <p>¿Está la cena hecha? {dinner.state.toString()}</p>
+          <p>¿Está la cena hecha? {dinnerState.value.toString()}</p>
         </div>
       </section>
       <section>
